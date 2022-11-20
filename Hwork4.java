@@ -1,8 +1,8 @@
 public class Hwork4 {
     public abstract static class pet {
-        public int name;
-        public int sex;
-        public pet(int name, int sex){
+        public String name;
+        public String sex;
+        public pet(String name,String sex){
             this.name = name;
             this.sex = sex;
         }
@@ -12,8 +12,8 @@ public class Hwork4 {
         }
     }
     public static class Dog extends pet {
-        public int color;
-        public Dog(int name,int sex,int color){
+        public String color;
+        public Dog(String name,String sex,String color){
             super(name,sex);
             this.color = color;
         }
@@ -26,7 +26,7 @@ public class Hwork4 {
     }
     public static class Cat extends pet {
         public  int wight;
-        public Cat(int name, int sex, int wight){
+        public Cat(String name,String sex, int wight){
             super(name,sex);
             this.wight = wight;
         }
@@ -38,25 +38,14 @@ public class Hwork4 {
         }
     }
     public static void main(String[] args){
-        Dog dog = new Dog(1,0,1);
-        if (dog.sex == 0){
-            System.out.print("狗:编号: "+dog.name+"性别:母 ");
-        }else{
-            System.out.print("狗:编号: "+dog.name+"性别:公 ");
-        }
-        if(dog.color==1){
-            System.out.print("颜色: 白色 ");
-        }
+        Dog dog = new Dog("小白","公","白");
+        System.out.print("Dog: "+dog.name+" "+dog.sex+" "+dog.color);
         System.out.print("食物: ");
         dog.eat();
         System.out.print("叫声: ");
         dog.talk();
-        Cat cat = new Cat(2,1,10);
-        if (cat.sex == 0){
-            System.out.print("猫:编号: "+cat.name+"性别:母 体重: "+cat.wight+"Kg ");
-        }else{
-            System.out.print("猫:编号: "+cat.name+"性别:公 体重: "+cat.wight+"Kg ");
-        }
+        Cat cat = new Cat("小黑","母",10);
+        System.out.print("Cat: "+cat.name+" "+cat.sex+" "+cat.wight+"Kg");
         System.out.print("食物: ");
         cat.eat();
         System.out.print("叫声: ");
